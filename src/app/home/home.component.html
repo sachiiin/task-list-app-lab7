@@ -1,0 +1,3 @@
+<h1>Task List</h1>
+<p>Total Number of Task Lists: {{ taskListCount }}</p>
+<app-task-list [tasklist]="tasklist" (taskListDeleted)="handleTaskListDeleted($event)"></app-task-list>

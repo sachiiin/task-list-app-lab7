@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { TaskComponent } from '../task/task.component';
@@ -9,7 +9,8 @@ import { TaskListItem } from '../models/task-list-item.model';
   standalone: true,
   imports: [CommonModule, FormsModule, TaskComponent],
   templateUrl: './task-list.component.html',
-  styleUrls: ['./task-list.component.css']
+  styleUrls: ['./task-list.component.css'],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class TaskListComponent {
   @Input() tasklist!: TaskListItem[];

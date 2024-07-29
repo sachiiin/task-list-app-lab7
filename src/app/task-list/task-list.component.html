@@ -1,9 +1,8 @@
 <div>
-    <input [(ngModel)]="filterText" placeholder="Filter by Category:" />
-  </div>
-  <div *ngFor="let task of filteredTaskList">
-    <h2>{{ task.title }}</h2>
-    <app-task *ngFor="let t of task.tasks" [task]="t" (taskDeleted)="handleTaskDeleted($event)"></app-task>
-    <button (click)="deleteTaskList(task.title)">Delete Task List</button>
-  </div>
-  
+  <input [(ngModel)]="filterText" placeholder="Filter by Category:" />
+</div>
+<div *ngFor="let task of filteredTaskList">
+  <h2>{{ task.title }}</h2>
+  <app-task *ngFor="let t of task.tasks" [task]="t" (taskDeleted)="handleTaskDeleted(t)"></app-task>
+  <button (click)="deleteTaskList(task.title)">Delete Task List</button>
+</div>

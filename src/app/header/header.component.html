@@ -1,2 +1,13 @@
-<h1>Task List</h1>
-<p>Total Number of Task Lists: {{ taskListCount }}</p>
+<nav>
+  <ul>
+    <li><a routerLink="/home">Home</a></li>
+    <li><a routerLink="/news">News</a></li>
+    <li><a routerLink="/grocery">Grocery</a></li>
+    <li><a routerLink="/about">About</a></li>
+    <li><a routerLink="/posts">Posts</a></li>
+    <li><a routerLink="/todos">Todos</a></li>
+    <li *ngIf="!(isLoggedIn | async)"><a routerLink="/register">Register</a></li>
+    <li *ngIf="!(isLoggedIn | async)"><a routerLink="/login">Login</a></li>
+    <li *ngIf="isLoggedIn | async"><a (click)="logout()">Logout</a></li>
+  </ul>
+</nav>
